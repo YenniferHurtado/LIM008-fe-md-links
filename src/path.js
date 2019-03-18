@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+
+const readFile = (file) => {
+    return file
+}
+
+
 fs.readdir(process.argv[2], function(err, archivos){
     archivos
     .filter(function(archivo){ 
@@ -8,13 +14,13 @@ fs.readdir(process.argv[2], function(err, archivos){
     })
     .forEach(function(archivo){ console.log(archivo); });
 });
-
+/*
  const convertToAbsolute = (pathRelative) => {       
     return path.resolve(pathRelative)
 }
 
 console.log(relativeToAbsolute());
-
+*/
 
 
 
