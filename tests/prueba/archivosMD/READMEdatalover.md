@@ -2,6 +2,9 @@
 
 *Preámbulo*
 
+https://stackoverflow.com/questions/7401340/retrieving-files-from-directory-node-js
+https://github.com/YenniferHurtado/LIM008-fe-md-links/issues
+
 
 #Según un estudio de IBM, el 90% de la data que existe hoy ha sido creada durante los últimos dos años. Cada día generamos 2.5 trillones de bytes de datos, una cifra sin precedentes.
 #No obstante, los datos por sí mismos son de poca utilidad. Para que esas grandes cantidades de datos se conviertan en información fácil de leer para los usuarios, necesitamos entender y procesar estos datos. Una manera simple de hacerlo es creando interfaces y visualizaciones.
