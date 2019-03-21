@@ -1,17 +1,33 @@
 
 
-import { validRouteAbsolute, routeToAbsolute, readDirectory } from '../src/path.js';
+import { validRouteAbsolute, routeToAbsolute, readDirectory, extractLinks } from '../src/path.js';
 
 const pathRelative = 'LIM008--md-links/tests';
 const pathAbsolute = '/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/READMEdatalover.md'; 
 
 const convertAbsolute = '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/LIM008--md-links/tests';
 
-const outputReadDirectory = ["/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/READMEdatalover.md", "/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/READMEmdlinks.md", "/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/READMEredsocial.md"];
+const outputReadDirectory = ["/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md", 
+                            "/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/mdl.md", 
+                            "/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/rs.md"];
 
 const inputReadDirectory = '/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD';
 
-describe('funcion validRoute', () => {
+const inputExtractLink = '/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md';
+
+const outputExtractLink = [{ 
+    href: 'https://www.google.com',
+    text: 'https://www.google.com',
+    file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md' },
+  { href: 'https://www.linkedin.com/',
+    text: 'https://www.linkedin.com/',
+    file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md' },
+  { href: 'http://talento.laboratoria.la/',
+    text: 'http://talento.laboratoria.la/',
+    file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md' }]
+
+
+ describe('funcion validRoute', () => {
     it('Deberia ser una funcion', () => {
             return expect(typeof validRouteAbsolute).toBe('function');
             });
@@ -40,3 +56,13 @@ describe('funcion readDirectory', () => {
         expect(readDirectory(inputReadDirectory)).toEqual(outputReadDirectory);
     });
 });
+
+describe('funcion extractLinks', () => {
+    it('deberia ser una funcion', () => {
+        return expect(typeof extractLinks).toBe('function');
+    });
+    it('deberia retornar los links de un archivo o una carpeta', () => {
+        expect(extractLinks(readDirectory(inputExtractLink))).toEqual(outputExtractLink);
+    });
+});
+
