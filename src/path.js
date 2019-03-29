@@ -28,6 +28,7 @@ export const readDirectory = (route) => {
         })};
     return arrList
 };
+//console.log(readDirectory('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD'));
 
 export const extractLinks = (arrFiles) => {
     const arrLinks = [];
@@ -43,5 +44,5 @@ export const extractLinks = (arrFiles) => {
 };
 
     
-console.log(extractLinks(readDirectory('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md')));
+//console.log(extractLinks(readDirectory('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md')));
     
