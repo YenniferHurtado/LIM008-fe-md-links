@@ -1,6 +1,8 @@
 
 
-import { validRouteAbsolute, routeToAbsolute, readDirectory, extractLinks } from '../src/path.js';
+import { validRouteAbsolute, routeToAbsolute, readDirectory } from '../src/controller/path';
+import { extractLinks } from '../src/controller/links';
+
 
 const pathRelative = 'LIM008--md-links/tests';
 const pathAbsolute = '/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/READMEdatalover.md'; 

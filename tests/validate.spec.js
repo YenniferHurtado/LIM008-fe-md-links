@@ -1,4 +1,4 @@
-import { validateLinks, extractLinks, readDirectory } from '../src/validate.js';
+import { validateLinks } from '../src/controller/validate';
 
 const inputValidate = [{ 
     href: 'https://www.google.com',

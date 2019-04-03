@@ -1,11 +1,14 @@
-import { extractLinks, readDirectory } from './path';
+
+import { readDirectory } from './path';
+import { extractLinks } from './links';
+
 
 import { url } from 'inspector';
 import { link } from 'fs';
 const fetch = require('node-fetch'); 
 
-export const validateLinks = (arrLinks) => { 
-  const arrPromises = arrLinks.map(links => new Promise((resolve) => {
+export const validateLinks = (arr) => { 
+  const arrPromises = arr.map(links => new Promise((resolve) => {
     fetch(links)
       .then(response => {
         if (response.status >= 200 && response.status < 400) {
@@ -18,7 +21,7 @@ export const validateLinks = (arrLinks) => {
           resolve(links);
         }
       }).catch(() => {
-        links.status = 'Link no valido';
+        links.status = 'Link no válido';
         links.statusText = 'FAIL';
         resolve(links);
       }); 
@@ -29,10 +32,7 @@ export const validateLinks = (arrLinks) => {
 validateLinks(extractLinks(readDirectory('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md'))).then(resultado => console.log(resultado))
 .catch(error => console.log(error));
 
-// let promesa = new Promise((resolve, reject) => {
-//   resolve('exito al procesar')
-//   reject('error')
-// });
 
-// promesa.then(resutado => console.log(resutado))
-// .catch(error => console.log(error));
+
+
+

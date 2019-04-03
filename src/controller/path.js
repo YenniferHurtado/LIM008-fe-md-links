@@ -8,7 +8,6 @@ export const validRouteAbsolute = paths => path.isAbsolute(paths);
 export const routeToAbsolute = paths => path.resolve(paths);
 
 export const readDirectory = (route) => {
-
     let arrList = []; 
     let statTwo = fs.statSync(route);
     if(statTwo.isFile()){
@@ -28,6 +27,8 @@ export const readDirectory = (route) => {
         })};
     return arrList
 };
+
+
 //console.log(readDirectory('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD'));
 
 export const extractLinks = (arrFiles) => {
