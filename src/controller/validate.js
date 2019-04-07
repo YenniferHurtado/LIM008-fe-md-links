@@ -1,8 +1,6 @@
 
-import { readDirectory } from './path';
+import { readDirectoryOrFile } from './path';
 import { extractLinks } from './links';
-
-
 import { url } from 'inspector';
 import { link } from 'fs';
 const fetch = require('node-fetch'); 
@@ -29,8 +27,10 @@ export const validateLinks = (arr) => {
   return Promise.all(arrPromises);
 };
 
-validateLinks(extractLinks(readDirectory('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md'))).then(resultado => console.log(resultado))
-.catch(error => console.log(error));
+
+// validateLinks(extractLinks(readDirectoryOrFile('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md')))
+// .then(resultado => console.log(resultado))
+// .catch(error => console.log(error));
 
 
 

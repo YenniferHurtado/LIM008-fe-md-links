@@ -1,4 +1,6 @@
-import { readDirectory } from './path'
+import { readDirectoryOrFile } from './path.js'
+const myMarked = require('marked');
+const fs = require('fs');
 
 export const extractLinks = (arrFiles) => {
     const arrLinks = [];
@@ -14,5 +16,5 @@ export const extractLinks = (arrFiles) => {
 };
 
     
-//console.log(extractLinks(readDirectory('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md')));
+//console.log(extractLinks(readDirectoryOrFile('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md')));
     
