@@ -1,6 +1,6 @@
 
 
-import { validRouteAbsolute, routeToAbsolute, readDirectory } from '../src/controller/path';
+import { validRouteAbsolute, routeToAbsolute, readDirectoryOrFile } from '../src/controller/path';
 import { extractLinks } from '../src/controller/links';
 
 
@@ -30,7 +30,7 @@ const outputExtractLink = [{
     file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md' }]
 
 
- describe('funcion validRoute', () => {
+describe('funcion validRoute', () => {
     it('Deberia ser una funcion', () => {
             return expect(typeof validRouteAbsolute).toBe('function');
             });
@@ -51,12 +51,12 @@ describe('funcion pathToAbsolute', () => {
     });
 });
 
-describe('funcion readDirectory', () => {
+describe('funcion readDirectoryOrFile', () => {
     it('deberia ser una funcion', () => {
-        return expect(typeof readDirectory).toBe('function');
+        return expect(typeof readDirectoryOrFile).toBe('function');
     });
     it('deberia retornar un array de archivos md', () => {
-        expect(readDirectory(inputReadDirectory)).toEqual(outputReadDirectory);
+        expect(readDirectoryOrFile(inputReadDirectory)).toEqual(outputReadDirectory);
     });
 });
 
@@ -65,7 +65,7 @@ describe('funcion extractLinks', () => {
         return expect(typeof extractLinks).toBe('function');
     });
     it('deberia retornar los links de un archivo o una carpeta', () => {
-        expect(extractLinks(readDirectory(inputExtractLink))).toEqual(outputExtractLink);
+        expect(extractLinks(readDirectoryOrFile(inputExtractLink))).toEqual(outputExtractLink);
     });
 });
 

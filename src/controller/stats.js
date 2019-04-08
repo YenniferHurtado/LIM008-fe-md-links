@@ -1,17 +1,16 @@
 
-
-export const linksUnique = (arrObjt) => {
+export const uniqueLinks = (arrObjt) => {
     const newSetLinks = [...new Set(arrObjt.map((links) => links.href))];
     return newSetLinks.length;
   };
 
-export const totalStast = (arrObjt) => {
-    const arrObjtTotal = arrObjt.length
-    return arrObjtTotal
+export const totalLinks = (arrObjt) => {
+    const arrObjtTotal = arrObjt
+    return arrObjtTotal.length;
 };
 
-export const brokenStats = (arrObjt) => {
-        const arrayBroken = arrObjt.filter(link => link.statusText === 'FAIL').length;
-        return arrayBroken;
+export const brokenLinks = (arrObjt) => {
+    const arrayBroken = arrObjt.filter(link => link.statusText === 'FAIL');
+    return arrayBroken.length;
 };
   

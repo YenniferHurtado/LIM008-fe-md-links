@@ -1,15 +1,21 @@
-import { resolve } from "url";
-import { rejects } from "assert";
 import { validateLinks } from './controller/validate'
 import { extractLinks } from './controller/links'
-import { validRouteAbsolute } from './controller/path';
-
 
 export const mdLinks = (path, options) => {
-    if (options.validate) {
-        return validateLinks(route).then(resp => resp)
-        .catch(err => err);
-    } else if (options.validate === false) {
-        return new Promise(resolve => resolve(extractLinks(route)));
-    }
-};
+    let newPath = path;
+    return new Promise((resolve) => {
+      if (!checkIfRouteIsAbsolute(path)) {
+        newPath = transformRelativePath(path);  
+      }
+      const routeRecv = fileMd(newPath); 
+      const extractLink = extractLinks(routeRecv); 
+      if (options.validate) {
+        validateLinks(extractLink)
+          .then(response => resolve(response))
+      } else {
+        resolve(extractLink);
+      }
+    });
+  };
+
+mdLinks('/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md', {validate : true}).then(resp => console.log(resp))

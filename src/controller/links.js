@@ -16,5 +16,4 @@ export const extractLinks = (arrFiles) => {
 };
 
     
-//console.log(extractLinks(readDirectoryOrFile('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md')));
     
