@@ -1,4 +1,4 @@
-import { readDirectoryOrFile } from './path.js'
+
 const myMarked = require('marked');
 const fs = require('fs');
 

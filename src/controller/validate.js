@@ -1,5 +1,3 @@
-import { extractLinks } from './links'
-import { readDirectoryOrFile } from './path'
 
 const fetch = require('node-fetch'); 
 
@@ -26,7 +24,3 @@ export const validateLinks = (arrLinks) => {
   const result = arrLinks.map(promises);
   return Promise.all(result);
 };
-
-//  validateLinks(extractLinks(readDirectoryOrFile('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md')))
-//  .then(resultado => console.log(resultado))
-//  .catch(error => console.log(error));

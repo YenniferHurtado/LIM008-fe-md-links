@@ -1,35 +1,35 @@
-import { mdLinks } from './mdLinks';
-import { totalStatLinks, uniqueStatLinks, brokenLinks} from './controller/stats';
-
+import { uniqueLinks, totalLinks, brokenLinks } from './controller/stats'
+import { mdLinks } from './mdLinks'
 
 const options = {
-  validate: false,
+   validate: false,
 }; 
 
-const cliMdLinks = (path, options1, options2) => {
-  return new Promise((resolve, reject) => {
-if ((options1 === '--stats' && options2 === '--validate')
-|| (options1 === '--validate' && options2 === '--stats' )) {
+export const commandsConsole = (path, firstOption, secondOption) => {
+  if((firstOption === '--validate' && secondOption === '--stats') || (firstOption === '---stats' && secondOption === '--validate')){
     options.validate = true;
-  mdLinks(path, options)
-    .then(resp => resolve(console.log(`Total: ${totalStast(resp)} \nUnique: ${linksUnique(resp)} \nBroken: ${brokenStats(resp)}`)))
-    .catch(err => reject(console.log(err)));
-} else if (options1 === '--validate') {
+    return mdLinks(path, options)
+    .then(res => (`Total:${totalLinks(res)}\nUnique:${uniqueLinks(res)}\nBroken:${brokenLinks(res)}`));
+  } else if (firstOption === '--validate') {
     options.validate = true;
-  mdLinks(path, options)
-    .then(resp => resolve(resp.forEach(objectReturn => { console.log(objectReturn.file, objectReturn.href, objectReturn.statusText, objectReturn.code, objectReturn.text)})))
-    .catch(err => reject(console.log(err)));
-} else if (options1 === '--stats') {
-    options.validate = true;
-  mdLinks(path, options)
-    .then(resp => resolve(console.log(`Total: ${totalStast(resp)} \nUnique: ${linksUnique(resp)}`)))
-    .catch(err => reject(console.log(err)));
-} else {
-  mdLinks(path, options)
-    .then(resp => resolve(resp.forEach(objectReturn => { console.log(objectReturn.file, objectReturn.href, objectReturn.text)})))
-    .catch(err => reject(console.log(err)));
-}
-  });
+    return mdLinks(path, options)
+    .then(res => {
+      return res.map(links => (`File: ${path}\nhref: ${links.href}\nText: ${links.statusText}\nStatus: ${links.status}\nText: ${links.text}\n`)).join('');
+    });
+  } else if (firstOption === '--stats') {
+    return mdLinks(path, options)
+    .then(res => (`Total:${totalLinks(res)}\nUnique: ${uniqueLinks(res)}`));
+  } else {
+    return mdLinks(path, options) 
+    .then(res => {
+      return res.map(links => (`File: ${path}\nhref: ${links.href}\nText: ${links.text}\n`)).join('');
+    });
+  }
 };
 
-module.exports = cliMdLinks;
+
+const path = '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md';
+const firstOption = process.argv[2];
+const secondOption = process.argv[3];
+
+commandsConsole(path, firstOption, secondOption).then(resp => console.log(resp));

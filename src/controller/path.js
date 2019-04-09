@@ -25,4 +25,3 @@ export const readDirectoryOrFile = (route) => {
     return arrList
 };
 
-//console.log(readDirectoryOrFile('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD'));    
