@@ -54,12 +54,6 @@ Unique: 3
 Broken: 1
 ```
 
-
-## Implementación de la librería
-
-
-
-
 ## Documentación técnica de la librería
 
 ### Diagrama de flujo
@@ -68,34 +62,19 @@ Análisis del proceso e información de cada punto de ejecución que se consider
 
 ![Flujograma](img/flujograma.jpg "Flujograma")
 
-#### 
+Se uso las herramientas de github para la organización del proyecto: issues,label, millesttones.
+
+![planificación](img/millestone.png "millestone")
+![planificación](img/issues.png "issues")
 
 
-### `README.md`
+### `Tecnologías emplementadas`
 
-- [ ] Colocar el *pseudo codigo* o *diagrama de flujo* con el algoritmo que
-  soluciona el problema.
-- [ ] Un board con el backlog para la implementación de la librería.
-- [ ] Documentación técnica de la librería.
-- [ ] Guía de uso e instalación de la librería
-
-### API `mdLinks(path, opts)`
-
-- [ ] El módulo exporta una función con la interfaz (API) esperada.
-- [ ] Implementa soporte para archivo individual
-- [ ] Implementa soporte para directorios
-- [ ] Implementa `options.validate`
-
-### CLI
-
-- [ ] Expone ejecutable `md-links` en el path (configurado en `package.json`)
-- [ ] Se ejecuta sin errores / output esperado
-- [ ] Implementa `--validate`
-- [ ] Implementa `--stats`
-
-### Pruebas / tests
-
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
-  lines, y branches.
-- [ ] Pasa tests (y linters) (`npm test`).
+- [ ] Javascript
+- [ ] NodeJS
+- [ ] npm
+- [ ] Node-fetch
+- [ ] Babel
+- [ ] Expresiones regulares
+- [ ] Markdown
 
