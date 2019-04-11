@@ -54,14 +54,14 @@ Broken: 1
 ```
 
 
-##Implementación de la librería
+## Implementación de la librería
 
 
 
 
 ## Documentación técnica de la librería
 
-![Flujograma](img/flujograma.jpg)
+![Flujograma](img/flujograma.jpg "Flujograma")
 ### General
 
 - [ ] Puede instalarse via `npm install --global <github-user>/md-links`
