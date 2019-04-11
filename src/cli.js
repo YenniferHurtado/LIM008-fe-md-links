@@ -5,6 +5,10 @@ const options = {
    validate: false,
 }; 
 
+const path = process.argv[2];
+const firstOption = process.argv[3];
+const secondOption = process.argv[4];
+
 export const commandsConsole = (path, firstOption, secondOption) => {
   if((firstOption === '--validate' && secondOption === '--stats') || (firstOption === '--stats' && secondOption === '--validate')){
     options.validate = true;
@@ -26,11 +30,6 @@ export const commandsConsole = (path, firstOption, secondOption) => {
     });
   }
 };
-
-
-const path = process.argv[2];
-const firstOption = process.argv[3];
-const secondOption = process.argv[4];
 
 commandsConsole(path, firstOption, secondOption).then(resp => console.log(resp));
 

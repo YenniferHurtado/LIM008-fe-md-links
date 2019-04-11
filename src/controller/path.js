@@ -24,4 +24,3 @@ export const readDirectoryOrFile = (route) => {
     };
     return arrList
 };
-
