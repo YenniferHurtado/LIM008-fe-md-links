@@ -2,7 +2,7 @@
 
 ## Información
 
-Md-Links es una librería o herramienta creada con node.Js, que sirve a developers u usuarios en general, que tenga el fácil acceso a determinados archivos de su sistema a través de la consola y extraer los links Markdown que contengan, y reportar algunas estadísticas, usando una línea de comandos.
+Md-Links es una librería o herramienta creada con node.Js, que sirve a developers u usuarios en general, que tengan el sencillo acceso a determinados archivos de su sistema a través de la consola y extraer los links Markdown que contengan, y reportar algunas estadísticas, usando una línea de comandos.
 
 ## Guía de uso o instalación
 
@@ -32,7 +32,8 @@ Vemos que el _output_ en este caso incluye la palabra `ok` o `fail` después de
 la URL, así como el status de la respuesta recibida a la petición HTTP a dicha
 URL.
 
-   - --stats
+   - options:
+      - --stats
 
 Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas
 básicas sobre los links.
@@ -61,11 +62,14 @@ Broken: 1
 
 ## Documentación técnica de la librería
 
-![Flujograma](img/flujograma.jpg "Flujograma")
-### General
+### Diagrama de flujo
 
-- [ ] Puede instalarse via `npm install --global <github-user>/md-links`
-- [ ] Crear un script en el `package.json` que transforme el codigo ES6+ a ES5.
+Análisis del proceso e información de cada punto de ejecución que se considero en la librería.
+
+![Flujograma](img/flujograma.jpg "Flujograma")
+
+#### 
+
 
 ### `README.md`
 
@@ -94,3 +98,4 @@ Broken: 1
 - [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
   lines, y branches.
 - [ ] Pasa tests (y linters) (`npm test`).
+
