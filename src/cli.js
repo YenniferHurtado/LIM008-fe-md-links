@@ -1,3 +1,4 @@
+
 import { uniqueLinks, totalLinks, brokenLinks } from './controller/stats'
 import { mdLinks } from './mdLinks'
 
@@ -10,10 +11,13 @@ const firstOption = process.argv[3];
 const secondOption = process.argv[4];
 
 export const commandsConsole = (path, firstOption, secondOption) => {
-  if((firstOption === '--validate' && secondOption === '--stats') || (firstOption === '--stats' && secondOption === '--validate')){
+
+  if((firstOption === '--validate' && secondOption === '--stats') || 
+      (firstOption === '--stats' && secondOption === '--validate')) {
     options.validate = true;
     return mdLinks(path, options)
     .then(res => (`Total:${totalLinks(res)}\nUnique:${uniqueLinks(res)}\nBroken:${brokenLinks(res)}`));
+
   } else if (firstOption === '--validate') {
     options.validate = true;
     return mdLinks(path, options)
@@ -30,6 +34,7 @@ export const commandsConsole = (path, firstOption, secondOption) => {
     });
   }
 };
+
 
 commandsConsole(path, firstOption, secondOption).then(resp => console.log(resp));
 

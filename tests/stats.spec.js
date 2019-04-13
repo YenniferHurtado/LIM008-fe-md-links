@@ -1,23 +1,22 @@
 import { uniqueLinks, totalLinks, brokenLinks } from '../src/controller/stats'
 
 const outputValidate = 
-[ { href: 'https://www.google.com',
-    text: 'https://www.google.com',
+[{ 
+    href: 'https://urlfailfail.gg/',
+    text: 'https://urlfailfail.gg/',
     file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md',
-    status: 200,
-    statusText: 'OK' 
-},
-{   href: 'https://www.linkedin.com/',
+    code: 'URL no válido',
+    status: 'FAIL' },
+  { href: 'https://www.linkedin.com/',
     text: 'https://www.linkedin.com/',
-    file:  '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md',
-    status: 200,
-    statusText: 'OK' 
-},
-{   href: 'http://talento.laboratoria.la/',
+    file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md',
+    code: 200,
+    status: 'OK' },
+  { href: 'http://talento.laboratoria.la/',
     text: 'http://talento.laboratoria.la/',
     file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md',
-    status: 200,
-    statusText: 'OK' }]
+    code: 200,
+    status: 'OK' }]
 
 
 describe('función uniqueLinks', () => {

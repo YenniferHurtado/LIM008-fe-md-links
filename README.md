@@ -68,7 +68,7 @@ Se uso las herramientas de github para la organización del proyecto: issues,lab
 ![planificación](img/issues.png "issues")
 
 
-### `Tecnologías emplementadas`
+### `Tecnologías implementadas`
 
 - [ ] Javascript
 - [ ] NodeJS
@@ -77,4 +77,5 @@ Se uso las herramientas de github para la organización del proyecto: issues,lab
 - [ ] Babel
 - [ ] Expresiones regulares
 - [ ] Markdown
+- [ ] Unit test - Jest
 

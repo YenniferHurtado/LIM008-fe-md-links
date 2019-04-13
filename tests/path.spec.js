@@ -19,8 +19,8 @@ const inputReadDirectory = '/Users/macbookair13/Desktop/Markdown\ Links/LIM008-f
 const inputExtractLink = '/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md';
 
 const outputExtractLink = [{ 
-    href: 'https://www.google.com',
-    text: 'https://www.google.com',
+    href: 'https://urlfailfail.gg/',
+    text: 'https://urlfailfail.gg/',
     file: '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md' },
   { href: 'https://www.linkedin.com/',
     text: 'https://www.linkedin.com/',

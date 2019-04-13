@@ -2,7 +2,7 @@
 
 #Links:
 
-https://www.google.com
+https://urlfailfail.gg/
 https://www.linkedin.com/
 http://talento.laboratoria.la/
 
