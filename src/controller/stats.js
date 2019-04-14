@@ -10,7 +10,7 @@ export const totalLinks = (arrObjt) => {
 };
 
 export const brokenLinks = (arrObjt) => {
-    const arrayBroken = arrObjt.filter(link => link.statusText === 'FAIL');
+    const arrayBroken = arrObjt.filter(link => link.status === 'FAIL');
     return arrayBroken.length;
 };
   

@@ -42,6 +42,6 @@ describe('funcion brokenLinks', () => {
         return expect(typeof brokenLinks).toBe('function');
     });
     it('deberia contar los links rotos del objeto', () => {
-        expect(brokenLinks(outputValidate)).toBe(0);
+        expect(brokenLinks(outputValidate)).toBe(1);
     }); 
 });

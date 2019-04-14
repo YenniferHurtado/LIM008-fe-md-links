@@ -6,14 +6,13 @@ const options = {
    validate: false,
 }; 
 
-const path = process.argv[2];
-const firstOption = process.argv[3];
-const secondOption = process.argv[4];
+const path = '/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md';
+const firstOption = process.argv[2];
+const secondOption = process.argv[3];
 
 export const commandsConsole = (path, firstOption, secondOption) => {
 
-  if((firstOption === '--validate' && secondOption === '--stats') || 
-      (firstOption === '--stats' && secondOption === '--validate')) {
+  if((firstOption === '--validate' && secondOption === '--stats') || (firstOption === '--stats' && secondOption === '--validate')) {
     options.validate = true;
     return mdLinks(path, options)
     .then(res => (`Total:${totalLinks(res)}\nUnique:${uniqueLinks(res)}\nBroken:${brokenLinks(res)}`));
@@ -22,7 +21,7 @@ export const commandsConsole = (path, firstOption, secondOption) => {
     options.validate = true;
     return mdLinks(path, options)
     .then(res => {
-      return res.map(links => (`File: ${path}\nhref: ${links.href}\nText: ${links.statusText}\nStatus: ${links.status}\nText: ${links.text}\n`)).join('');
+      return res.map(links => (`File: ${path}\nText: ${links.href}\nhref: ${links.href}\nStatus: ${links.code}\nStatusMessage: ${links.status}\n`)).join('');
     });
   } else if (firstOption === '--stats') {
     return mdLinks(path, options)
@@ -36,6 +35,6 @@ export const commandsConsole = (path, firstOption, secondOption) => {
 };
 
 
-commandsConsole(path, firstOption, secondOption).then(resp => console.log(resp));
+//commandsConsole(path, firstOption, secondOption).then(resp => console.log(resp));
 
 //'/Users/macbookair13/Desktop/Markdown Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md'

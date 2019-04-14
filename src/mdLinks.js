@@ -10,11 +10,11 @@ export const mdLinks = (path, options) => {
     pathAbsolute = path;
   };
   return new Promise((resolve) => {
-    !options.validate ? resolve(extractLinks(readDirectoryOrFile(pathAbsolute))) 
+    !options ? resolve(extractLinks(readDirectoryOrFile(pathAbsolute))) 
     : resolve(validateLinks(extractLinks(readDirectoryOrFile(pathAbsolute))));
     });
   };
 
-   mdLinks('/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md', { validate: true })
-   .then(res => console.log(res))
-   .catch(err => console.log(err));
+  //  mdLinks('/Users/macbookair13/Desktop/Markdown\ Links/LIM008-fe-md-links/tests/prueba/archivosMD/dl.md', { options: true })
+  //  .then(res => console.log(res))
+  //  .catch(err => console.log(err));
